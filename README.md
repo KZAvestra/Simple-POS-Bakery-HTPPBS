@@ -81,36 +81,40 @@ Program ini dirancang untuk toko roti kecil atau usaha roti rumahan yang belum m
 ![Database](img/database.png)
 
 ## Rancangan Class
-`
-│
-├── entity/                         // Berisi class yang merepresentasikan data dan objek dalam sistem.
-│   ├── Product.java
-│   ├── Transaction.java
-│   ├── TransactionDetail.java
-│   ├── DailyReport.java
-│   ├── Payment.java
-│   ├── CashPayment.java
-│   ├── QRISPayment.java
-│   └── DebitPayment.java
-│
-├── repository/                      // Berisi class untuk mengelola komunikasi dan operasi database.
-│   ├── DatabaseConnection.java      // Mengatur koneksi aplikasi dengan database MySQL.
-│   ├── ProductRepository.java
-│   ├── TransactionRepository.java
-│   └── DailyReportRepository.java
-│
-├── service/                         // Berisi class yang menangani proses dan fitur aplikasi.
-│   ├── CartService.java
-│   ├── TransactionService.java
-│   ├── PaymentService.java
-│   └── ReportService.java
-│
-├── view/                            // Berisi class untuk tampilan antarmuka menggunakan Java Swing.
-│   ├── MainFrame.java
-│   ├── InventoryFrame.java
-│   ├── CartFrame.java
-│   ├── SalesHistoryFrame.java
-│   └── SalesReportFrame.java
-│
-└── Main.java
-`
+Ini versi yang sudah dirapikan untuk langsung ditempel ke `README.md`. Aku rapikan indentasi dan tambahkan deskripsi singkat tiap package serta class.
+
+## Rancangan Class
+
+```
+    │
+    ├── entity/                         // Class yang merepresentasikan data dan objek dalam sistem.
+    │   ├── Product.java
+    │   ├── Transaction.java
+    │   ├── TransactionDetail.java
+    │   ├── DailyReport.java
+    │   ├── Payment.java
+    │   ├── CashPayment.java
+    │   ├── QRISPayment.java
+    │   └── DebitPayment.java
+    │
+    ├── repository/                     // Class untuk mengelola komunikasi dan operasi database.
+    │   ├── DatabaseConnection.java     // Mengatur koneksi aplikasi dengan database MySQL.
+    │   ├── ProductRepository.java
+    │   ├── TransactionRepository.java
+    │   └── DailyReportRepository.java
+    │
+    ├── service/                        // Class yang menangani proses dan fitur aplikasi.
+    │   ├── CartService.java
+    │   ├── TransactionService.java
+    │   ├── PaymentService.java
+    │   └── ReportService.java
+    │
+    ├── view/                           // Class untuk tampilan antarmuka menggunakan Java Swing.
+    │   ├── MainFrame.java
+    │   ├── InventoryFrame.java
+    │   ├── CartFrame.java
+    │   ├── SalesHistoryFrame.java
+    │   └── SalesReportFrame.java
+    │
+    └── Main.java                       // Titik awal untuk menjalankan aplikasi.
+```
