@@ -81,7 +81,7 @@ Program ini dirancang untuk toko roti kecil atau usaha roti rumahan yang belum m
 ![Database](img/database.png)
 
 ## Rancangan Class
-
+`
 │
 ├── entity/                         // Berisi class yang merepresentasikan data dan objek dalam sistem.
 │   ├── Product.java
@@ -113,3 +113,4 @@ Program ini dirancang untuk toko roti kecil atau usaha roti rumahan yang belum m
 │   └── SalesReportFrame.java
 │
 └── Main.java
+`
