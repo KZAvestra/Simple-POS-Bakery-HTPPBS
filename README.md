@@ -54,7 +54,7 @@ User akan dapat melakukan manajemen stok barang dalam inventaris, melakukan tran
 
 - Setelah periode transaksi selesai (ditentukan dengan menekan tombol tertentu), user dapat melihat daily report dari periode tersebut yang termasuk jumlah transaksi dan jumlah income.
 
-![flowchart alur](alur.png)
+![flowchart alur](img/alur.png)
 
 =======
 
