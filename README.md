@@ -81,9 +81,6 @@ Program ini dirancang untuk toko roti kecil atau usaha roti rumahan yang belum m
 ![Database](img/database.png)
 
 ## Rancangan Class
-Ini versi yang sudah dirapikan untuk langsung ditempel ke `README.md`. Aku rapikan indentasi dan tambahkan deskripsi singkat tiap package serta class.
-
-## Rancangan Class
 
 ```
     │
