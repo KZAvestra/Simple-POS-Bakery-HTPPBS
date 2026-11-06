@@ -31,3 +31,26 @@ Program ini dirancang untuk toko roti kecil atau usaha roti rumahan yang belum m
 | Class attribute | Penghitung ID transaksi yang dipakai bersama semua objek transaksi |
 | Exception handling | Stok tidak cukup, cart kosong, input tidak valid |
 | Inheritance dan polymorphism (opsional) | Metode pembayaran (Tunai, QRIS, Debit) dengan perilaku `proses()` masing-masing |
+
+## Alur Program
+
+User akan dapat melakukan manajemen stok barang dalam inventaris, melakukan transaksi dengan customer, dan melihat daily report berdasarkan transaksi yang dilakukan dalam satu periode (ditentukan oleh user).
+
+### Halaman-Halaman
+**Inventory:**
+- Menampilkan semua produk yang telah ditentukan oleh user.
+
+- User dapat menambah produk baru, menghapus produk, dan mengedit produk (harga, nama, stok, etc.) dalam halaman ini.
+
+**Transaction:**
+- Menampilkan menu transaction sederhana.
+
+- User dapat menambahkan produk kedalam transaksi menggunakan id produk.
+
+- Produk yang dibeli akan diambil stoknya dari inventory sesuai dengan jumlah yang dibeli.
+
+- Setelah transaksi selesai, detail transaksi disimpan untuk daily report.
+
+- Setelah periode transaksi selesai (ditentukan dengan menekan tombol tertentu), user dapat melihat daily report dari periode tersebut yang termasuk jumlah transaksi dan jumlah income.
+
+![flowchart alur](alur.png)
