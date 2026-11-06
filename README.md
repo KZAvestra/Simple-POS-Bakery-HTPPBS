@@ -31,3 +31,85 @@ Program ini dirancang untuk toko roti kecil atau usaha roti rumahan yang belum m
 | Class attribute | Penghitung ID transaksi yang dipakai bersama semua objek transaksi |
 | Exception handling | Stok tidak cukup, cart kosong, input tidak valid |
 | Inheritance dan polymorphism (opsional) | Metode pembayaran (Tunai, QRIS, Debit) dengan perilaku `proses()` masing-masing |
+
+## Rancangan Database
+
+### 1. products
+
+| Field          | Data Type     | Key                 |
+| -------------- | ------------- | ------------------- |
+| `product_id`   | INT           | PK, AUTO_INCREMENT  |
+| `product_name` | VARCHAR(100)  | NOT NULL            |
+| `category`     | VARCHAR(50)   | -                   |
+| `price`        | DECIMAL(12,2) | NOT NULL            |
+| `stock`        | INT           | NOT NULL, DEFAULT 0 |
+| `description`  | TEXT          | -                   |
+| `is_active`    | BOOLEAN       | DEFAULT TRUE        |
+
+### 2. daily_reports
+
+| Field                | Data Type     | Key                       |
+| -------------------- | ------------- | ------------------------- |
+| `report_id`          | INT           | PK, AUTO_INCREMENT        |
+| `report_date`        | DATE          | UNIQUE, NOT NULL          |
+| `total_income`       | DECIMAL(12,2) | NOT NULL                  |
+| `total_transactions` | INT           | NOT NULL                  |
+| `closed_at`          | DATETIME      | DEFAULT CURRENT_TIMESTAMP |
+
+### 3. transactions
+
+| Field              | Data Type     | Key                       |
+| ------------------ | ------------- | ------------------------- |
+| `transaction_id`   | INT           | PK, AUTO_INCREMENT        |
+| `report_id`        | INT           | FK, NULL                  |
+| `transaction_date` | DATETIME      | DEFAULT CURRENT_TIMESTAMP |
+| `total_price`      | DECIMAL(12,2) | NOT NULL                  |
+| `payment_type`     | VARCHAR(30)   | NOT NULL                  |
+
+### 4. transaction_details
+
+| Field            | Data Type     | Key                |
+| ---------------- | ------------- | ------------------ |
+| `detail_id`      | INT           | PK, AUTO_INCREMENT |
+| `transaction_id` | INT           | FK, NOT NULL       |
+| `product_id`     | INT           | FK, NOT NULL       |
+| `product_name`   | VARCHAR(100)  | NOT NULL           |
+| `quantity`       | INT           | NOT NULL           |
+| `unit_price`     | DECIMAL(12,2) | NOT NULL           |
+| `subtotal`       | DECIMAL(12,2) | NOT NULL           |
+
+![Database](img/database.png)
+
+## Rancangan Class
+
+│
+├── entity/                         // Berisi class yang merepresentasikan data dan objek dalam sistem.
+│   ├── Product.java
+│   ├── Transaction.java
+│   ├── TransactionDetail.java
+│   ├── DailyReport.java
+│   ├── Payment.java
+│   ├── CashPayment.java
+│   ├── QRISPayment.java
+│   └── DebitPayment.java
+│
+├── repository/                      // Berisi class untuk mengelola komunikasi dan operasi database.
+│   ├── DatabaseConnection.java      // Mengatur koneksi aplikasi dengan database MySQL.
+│   ├── ProductRepository.java
+│   ├── TransactionRepository.java
+│   └── DailyReportRepository.java
+│
+├── service/                         // Berisi class yang menangani proses dan fitur aplikasi.
+│   ├── CartService.java
+│   ├── TransactionService.java
+│   ├── PaymentService.java
+│   └── ReportService.java
+│
+├── view/                            // Berisi class untuk tampilan antarmuka menggunakan Java Swing.
+│   ├── MainFrame.java
+│   ├── InventoryFrame.java
+│   ├── CartFrame.java
+│   ├── SalesHistoryFrame.java
+│   └── SalesReportFrame.java
+│
+└── Main.java
