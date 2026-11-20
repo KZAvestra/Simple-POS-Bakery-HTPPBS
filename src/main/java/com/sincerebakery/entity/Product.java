@@ -7,16 +7,12 @@ package com.sincerebakery.entity;
 
 import java.math.BigDecimal;
 
-/**
- *
- * @author Silka
- */
 public class Product {
-    private int productId;
-    private String productName;
-    private String category;
-    private BigDecimal price;
-    private int stock;
+    private final int productId;
+    private final String productName;
+    private final String category;
+    private final BigDecimal price;
+    private final int stock;
 
     public Product(int productId, String productName, String category, BigDecimal price, int stock) {
         this.productId = productId;
@@ -25,7 +21,6 @@ public class Product {
         this.price = price;
         this.stock = stock;
     }
-
     public int getProductId() { return productId; }
     public String getProductName() { return productName; }
     public String getCategory() { return category; }
